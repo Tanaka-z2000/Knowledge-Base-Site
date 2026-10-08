@@ -1,8 +1,10 @@
 # Knowledge Base Site
 
-公開知識閱讀網站，提供臺灣最低工資專題：一篇綜合研究與五篇深入文章、46份來源紀錄，以及主題導航、搜尋和歷年工資圖表。研究保留部分查核、來源取得範圍與尚未解決的分歧。
+公開知識圖書館，將研究與查核整理成完整作品，以圖解、章節導覽與可追溯來源協助理解。館藏依內容主題與作品形式組織，可持續加入不同領域。
 
-[首頁檔案](index.html) · [最低工資專題](issue-taiwan-minimum-wage.html) · [來源資料庫](sources.html)
+目前首份作品是「臺灣最低工資：從薪資下限到生活改善」。原六份研究筆記保留為證據詳情；既有研究限制不因重新編輯而消失。
+
+[首頁](index.html) · [全部館藏](collection.html) · [探索主題](explore.html) · [首份作品](work-taiwan-minimum-wage.html) · [來源資料庫](sources.html)
 
 網站網址：https://tanaka-z2000.github.io/Knowledge-Base-Site/
 

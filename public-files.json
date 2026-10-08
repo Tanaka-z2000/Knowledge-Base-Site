@@ -59,16 +59,20 @@
     "assets/search-data.js",
     "assets/source-data.js",
     "build-info.json",
+    "collection.html",
+    "explore.html",
     "index.html",
     "issue-taiwan-minimum-wage.html",
     "public-files.json",
     "search.html",
+    "shelf-society-policy.html",
     "sources.html",
     "topic-external-support.html",
     "topic-fact-checking.html",
     "topic-life-reflections.html",
     "topic-professional-skills.html",
     "topic-reading.html",
-    "topic-social-issues.html"
+    "topic-social-issues.html",
+    "work-taiwan-minimum-wage.html"
   ]
 }

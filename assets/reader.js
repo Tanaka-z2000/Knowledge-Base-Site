@@ -2,7 +2,7 @@
 (() => {
   document.documentElement.classList.add('js');
   const $ = id => document.getElementById(id);
-  const labels = {note: '知識筆記', source: '來源紀錄', application: '應用方案'};
+  const labels = {work: '館藏作品', note: '知識筆記', source: '來源紀錄', application: '應用方案'};
   const verification = {partial: '部分查核', verified: '已查核（範圍見正文）', disputed: '證據有分歧', unverified: '未查核'};
   const statusLabels = {draft:'草稿',superseded:'已被取代',retired:'已停用',candidate:'候選提案',planned:'已規劃','in-use':'使用中',completed:'已完成執行'};
   const make = (tag, text, cls) => {const node = document.createElement(tag); if (text != null) node.textContent = text; if (cls) node.className = cls; return node;};
@@ -128,7 +128,7 @@
   function resultCard(row) {
     const card = make('article',null,'record-card');
     const badges = make('div',null,'badges');
-    badges.append(make('span',labels[row.type],'badge'),make('span',verification[row.verification] || '未查核','badge amber'));
+    badges.append(make('span',row.type === 'note' && $('search-form').dataset.library ? '研究詳情' : labels[row.type],'badge'),make('span',verification[row.verification] || '未查核','badge amber'));
     if (statusLabels[row.status]) badges.append(make('span',statusLabels[row.status],'badge'));
     const h = make('h3'), a = make('a',row.title); a.href = row.href; h.append(a);
     card.append(badges,h,make('p',row.summary),make('div',`更新 ${row.updated} · 最後查核 ${row.verified}`,'card-foot'));
@@ -154,7 +154,7 @@
       for (let i=0;i<data.length;i++) {
         if (i % 100 === 0) {await waitTurn(); if (current !== generation) return;}
         const row = data[i];
-        if (selectedKind === 'knowledge' ? row.type === 'source' : selectedKind !== 'all' && row.type !== selectedKind) continue;
+        if (selectedKind === 'knowledge' ? ($('search-form').dataset.library ? row.type !== 'work' : row.type === 'source') : selectedKind !== 'all' && row.type !== selectedKind) continue;
         if (selectedTopic && !row.topics.includes(selectedTopic)) continue;
         searched++;
         const title = row._title ??= normal(row.title), tags = row._tags ??= normal(row.tags.join(' '));
