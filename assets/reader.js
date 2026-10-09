@@ -68,7 +68,7 @@
       if (!source) throw new Error('source unavailable');
       $('source-title').textContent = source.title;
       $('source-summary').textContent = source.summary;
-      for (const [key,value] of [['取得範圍',source.scope],['完整性',source.completeness],['查核狀態',source.verification],['來源日期',source.sourceDate],['最後查核',source.verified]]) {
+      for (const [key,value] of [['來源分級',source.evidence || '尚未分級'],['採用界線',source.evidenceUse || '尚未記錄'],['取得範圍',source.scope],['完整性',source.completeness],['查核狀態',source.verification],['來源日期',source.sourceDate],['最後查核',source.verified]]) {
         $('source-meta').append(make('dt',key),make('dd',value));
       }
       // Keep the citation's original fragment so its exact evidence location survives preview.
